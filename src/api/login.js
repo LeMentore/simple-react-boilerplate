@@ -1,7 +1,8 @@
-export const loginApi = async () => {
+export const loginApi = async (history) => {
     return new Promise((resolve, reject) => {
-        resolve();
-    })
+        console.log(history)
+        resolve()
+    }).then(() => history.push('/home'))
 }
 
 export const logoutApi = async () => {

@@ -14,7 +14,7 @@ class AuthorizedRoute extends Component {
 
         return (
             <Route {...rest} render={props => {
-                if (pending) return <div>Loading...</div>
+                // if (pending) return <div>Loading...</div>
                 return logged
                     ? <Component {...props} />
                     : <Redirect to="/auth/login" />
@@ -25,8 +25,8 @@ class AuthorizedRoute extends Component {
 
 const mapStateToProps = state => {
     return {
-        pending: state.loggedUser.pending,
-        logged: state.loggedUser.logged
+        pending: state.loggedUserState.pending,
+        logged: state.loggedUserState.logged
     }
 }
 
